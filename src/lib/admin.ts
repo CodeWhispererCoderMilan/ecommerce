@@ -88,6 +88,7 @@ export async function getProductAdminById(id: string): Promise<ProductDetail | n
 export interface ProductSaveData {
   name: string;
   slug: string;
+  sku: string | null;
   category_id: string | null;
   brand_id: string | null;
   description: string;

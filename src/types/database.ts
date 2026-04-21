@@ -138,6 +138,7 @@ export interface Product {
   category_id: string | null;
   name: string;
   slug: string;
+  sku: string | null;
   description: string | null;
   highlights: string[];
   rich_description: RichBlock[];

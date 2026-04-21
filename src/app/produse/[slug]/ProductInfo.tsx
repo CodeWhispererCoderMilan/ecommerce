@@ -117,6 +117,13 @@ export default function ProductInfo({ product }: Props) {
         )}
       </div>
 
+      {/* SKU */}
+      {product.sku && (
+        <p className="text-[11px] text-zinc-400 -mt-2 mb-4">
+          SKU: <span className="font-mono">{product.sku}</span>
+        </p>
+      )}
+
       {/* Price */}
       <div className="flex items-baseline gap-2 mb-4">
         <span className="text-3xl font-black text-zinc-900">

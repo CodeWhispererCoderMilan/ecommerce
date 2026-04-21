@@ -39,6 +39,7 @@ export default function ProductForm({ product, brands, categories }: Props) {
   const [name, setName]               = useState(product?.name ?? "");
   const [slug, setSlug]               = useState(product?.slug ?? "");
   const [slugManual, setSlugManual]   = useState(isEdit);
+  const [sku, setSku]                 = useState(product?.sku ?? "");
   const [categoryId, setCategoryId]   = useState(product?.category?.id ?? "");
   const [brandId, setBrandId]         = useState(product?.brand?.id ?? "");
   const [badge, setBadge]             = useState<string>(product?.badge ?? "");
@@ -104,6 +105,7 @@ export default function ProductForm({ product, brands, categories }: Props) {
       const data = {
         name: name.trim(),
         slug: slug.trim(),
+        sku: sku.trim() || null,
         category_id: categoryId || null,
         brand_id: brandId || null,
         description: description.trim(),
@@ -147,7 +149,7 @@ export default function ProductForm({ product, brands, categories }: Props) {
     } finally {
       setSaving(false);
     }
-  }, [name, slug, categoryId, brandId, badge, price, isActive, description, highlights, richDesc, specs, pendingImages, existingImages, variants, isEdit, product, router]);
+  }, [name, slug, sku, categoryId, brandId, badge, price, isActive, description, highlights, richDesc, specs, pendingImages, existingImages, variants, isEdit, product, router]);
 
   const sectionClass = "bg-white rounded-2xl border border-zinc-200 p-6 space-y-4";
   const sectionTitle = "text-sm font-black uppercase tracking-widest text-zinc-800 mb-1";
@@ -177,6 +179,12 @@ export default function ProductForm({ product, brands, categories }: Props) {
               onChange={(e) => { setSlug(e.target.value); setSlugManual(true); }}
               placeholder="keychron-k3-pro" required className={inputClass} />
             <p className="text-[10px] text-zinc-400 mt-1">Va fi URL-ul produsului: /produse/{slug || "…"}</p>
+          </div>
+          <div>
+            <label className={labelClass}>SKU</label>
+            <input type="text" value={sku} onChange={(e) => setSku(e.target.value)}
+              placeholder="ex: KC-K3PRO-WHT" className={inputClass} />
+            <p className="text-[10px] text-zinc-400 mt-1">Cod unic de identificare produs.</p>
           </div>
           <div>
             <label className={labelClass}>Preț de bază (RON) *</label>
