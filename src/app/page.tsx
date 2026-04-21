@@ -264,9 +264,9 @@ export default function HomePage() {
         </div>
 
         {/* ── Footer ── */}
-        <footer className="text-white pt-14 pb-6 relative overflow-hidden">
+        <footer className="text-white pt-14 pb-6 relative overflow-hidden bg-zinc-950">
           <div className="absolute inset-0" style={{ backgroundImage: PATTERN_BG, backgroundSize: "cover", backgroundPosition: "center" }} />
-          <div className="absolute inset-0 bg-zinc-950/90" />
+          <div className="absolute inset-0 bg-zinc-950/85" />
           <div className="relative z-10 max-w-screen-xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 pb-10 border-b border-zinc-800">
             <div>
               <p className="font-display font-black text-xl mb-1">NEXUS<span className="text-red-600">X</span></p>

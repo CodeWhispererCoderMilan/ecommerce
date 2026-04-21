@@ -181,8 +181,8 @@ export default function Navbar({ user, isAdmin, onOpenAuth }: Props) {
     <header className="sticky top-0 z-50">
 
       {/* ── Announcement bar ── */}
-      <div className="h-8 flex items-center justify-center overflow-hidden relative" style={{ backgroundImage: "url('/patterns/wavy-contour-background-topographic-contour-background-contour-lines-background-topographic-map-background-abstract-wavy-background-vector.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
-        <div className="absolute inset-0 bg-black/70" />
+      <div className="h-8 flex items-center justify-center overflow-hidden relative bg-black" style={{ backgroundImage: "url('/patterns/wavy-contour-background-topographic-contour-background-contour-lines-background-topographic-map-background-abstract-wavy-background-vector.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="absolute inset-0 bg-black/60" />
         {exitingAnnIdx !== null && (
           <span key={`out-${exitingAnnIdx}`} className="absolute z-10 text-xs font-medium text-white/80 animate-ticker-out">
             {ANNOUNCEMENTS[exitingAnnIdx]}
