@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local reference/research assets (not deployed — images go to Supabase Storage)
+public/Product\ Images\ &\ descriptions/
+public/Netzah\ Products/
+public/sitetoclone/
+public/patterns/
+public/Features/
+scripts/
